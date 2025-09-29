@@ -1,5 +1,5 @@
 {
-    "name": "theihasan/dual-agent",
+    "name": "theihasan/laravel-nightwatch-dual-agent",
     "description": "Dual agent monitoring for Laravel Nightwatch with database storage",
     "keywords": ["laravel", "nightwatch", "monitoring", "metrics", "database"],
     "license": "MIT",
