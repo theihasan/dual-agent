@@ -24,7 +24,10 @@ Dual Agent is a Laravel package that automatically saves all Nightwatch monitori
    composer require theihasan/dual-agent
    ```
 
-2. Add service providers to `config/app.php` (after Nightwatch):
+2. Add service providers (after Nightwatch):
+
+   **For Laravel 10:**
+   Add to `config/app.php`:
    ```php
    'providers' => [
        // ...
@@ -32,6 +35,15 @@ Dual Agent is a Laravel package that automatically saves all Nightwatch monitori
        \Ihasan\DualAgent\DualAgentServiceProvider::class,
        // ...
    ],
+   ```
+
+   **For Laravel 11+:**
+   Add to `bootstrap/app.php`:
+   ```php
+   'providers' => [
+       \Laravel\Nightwatch\NightwatchServiceProvider::class,
+       \Ihasan\DualAgent\DualAgentServiceProvider::class,
+   ]
    ```
 
 3. Configure your `.env` file:
