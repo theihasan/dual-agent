@@ -119,11 +119,7 @@ php artisan migrate
 
 ## Links to Full Documentation
 
-- [Complete Installation Guide](https://github.com/theihasan/dual-agent/blob/main/docs/installation.md)
-- [Configuration Reference](https://github.com/theihasan/dual-agent/blob/main/docs/configuration.md)
-- [Querying Data](https://github.com/theihasan/dual-agent/blob/main/docs/querying.md)
-- [Troubleshooting](https://github.com/theihasan/dual-agent/blob/main/docs/troubleshooting.md)
-- [API Reference](https://github.com/theihasan/dual-agent/blob/main/docs/api.md)
+- [Complete Documentation](documentation.md)
 
 ## Contributing
 
