@@ -9,6 +9,60 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 
+/**
+ * @property int $id
+ * @property string $event_type
+ * @property Carbon $event_timestamp
+ * @property string|null $trace_id
+ * @property string|null $session_id
+ * @property int|null $user_id
+ * @property string|null $method
+ * @property string|null $url
+ * @property string|null $route_name
+ * @property string|null $route_path
+ * @property int|null $status_code
+ * @property float|null $duration
+ * @property int|null $memory_usage
+ * @property int|null $request_size
+ * @property int|null $response_size
+ * @property string|null $sql
+ * @property string|null $connection
+ * @property float|null $query_duration
+ * @property array|null $bindings
+ * @property string|null $exception_class
+ * @property string|null $exception_message
+ * @property string|null $exception_file
+ * @property int|null $exception_line
+ * @property array|null $exception_trace
+ * @property string|null $job_class
+ * @property string|null $queue
+ * @property string|null $job_status
+ * @property int|null $attempts
+ * @property float|null $job_duration
+ * @property string|null $cache_key
+ * @property string|null $cache_operation
+ * @property string|null $cache_store
+ * @property string|null $mail_class
+ * @property array|null $mail_to
+ * @property string|null $mail_subject
+ * @property string|null $log_level
+ * @property string|null $log_message
+ * @property array|null $log_context
+ * @property float|null $bootstrap_duration
+ * @property float|null $before_middleware_duration
+ * @property float|null $action_duration
+ * @property float|null $render_duration
+ * @property float|null $after_middleware_duration
+ * @property float|null $terminating_duration
+ * @property string|null $environment
+ * @property string|null $server_name
+ * @property string|null $app_version
+ * @property array|null $custom_metadata
+ * @property array|null $raw_payload
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Model|null $user
+ */
 class DualAgentMetric extends Model
 {
     protected $fillable = [
@@ -17,7 +71,7 @@ class DualAgentMetric extends Model
         'trace_id',
         'session_id',
         'user_id',
-        
+
         // Request metrics
         'method',
         'url',
@@ -28,42 +82,42 @@ class DualAgentMetric extends Model
         'memory_usage',
         'request_size',
         'response_size',
-        
+
         // Database metrics
         'sql',
         'connection',
         'query_duration',
         'bindings',
-        
+
         // Exception metrics
         'exception_class',
         'exception_message',
         'exception_file',
         'exception_line',
         'exception_trace',
-        
+
         // Job metrics
         'job_class',
         'queue',
         'job_status',
         'attempts',
         'job_duration',
-        
+
         // Cache metrics
         'cache_key',
         'cache_operation',
         'cache_store',
-        
+
         // Mail metrics
         'mail_class',
         'mail_to',
         'mail_subject',
-        
+
         // Log metrics
         'log_level',
         'log_message',
         'log_context',
-        
+
         // Performance stages
         'bootstrap_duration',
         'before_middleware_duration',
@@ -71,12 +125,12 @@ class DualAgentMetric extends Model
         'render_duration',
         'after_middleware_duration',
         'terminating_duration',
-        
+
         // Environment info
         'environment',
         'server_name',
         'app_version',
-        
+
         // Additional metadata
         'custom_metadata',
         'raw_payload',
