@@ -1,0 +1,53 @@
+parameters:
+    level: 8
+
+    paths:
+        - src
+        - tests
+
+    excludePaths:
+        - vendor
+        - database/migrations
+
+    phpVersion: 80200
+
+    bootstrapFiles:
+        - vendor/autoload.php
+
+    checkClassCaseSensitivity: true
+    checkFunctionNameCase: true
+    checkInternalClassCaseSensitivity: true
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+    checkUninitializedProperties: true
+
+    reportMaybes: true
+    reportStaticMethodSignatures: true
+    treatPhpDocTypesAsCertain: false
+
+    parallel:
+        jobSize: 20
+        maximumNumberOfProcesses: 4
+        minimumNumberOfJobsPerProcess: 2
+
+    fileExtensions:
+        - php
+
+    scanFiles:
+        - config/dual-agent.php
+
+    typeAliases:
+        StringOrNull: 'string|null'
+        IntOrNull: 'int|null'
+        BoolOrNull: 'bool|null'
+        ArrayOrNull: 'array|null'
+        ConfigArray: 'array<string, mixed>'
+        DatabaseRow: 'array<string, mixed>'
+
+    universalObjectCratesClasses:
+        - stdClass
+
+
+
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - phpstan-baseline.neon
