@@ -171,7 +171,7 @@ class DualAgentServiceProvider extends ServiceProvider
         $config = $this->app['config'];
 
         if (!$config->has('dual-agent.buffer_size')) {
-            $config->set('dual-agent.buffer_size', env('DUAL_AGENT_BUFFER_SIZE', 100));
+            $config->set('dual-agent.buffer_size', config('dual-agent.buffer_size', 100));
         }
     }
 

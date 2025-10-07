@@ -12,7 +12,7 @@ final readonly class MetricDto implements JsonSerializable
         public string $eventType,
         public float $timestamp,
         public string $traceId,
-        public ?int $userId = null,
+        public int|string|null $userId = null,
         public ?string $sessionId = null,
         public ?float $duration = null,
         public ?int $statusCode = null,
