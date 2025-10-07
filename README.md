@@ -81,6 +81,39 @@ Dual Agent is a Laravel package that automatically saves all Nightwatch monitori
 | `DUAL_AGENT_RETENTION_DAYS` | `30` | Days to retain metrics data |
 | `DUAL_AGENT_AGGREGATION_ENABLED` | `true` | Enable metric aggregation |
 
+## Type Safety
+
+This package includes a comprehensive PHPStan configuration for maximum type safety. The configuration is set to level 9 with strict rules enabled.
+
+### Running Type Analysis
+
+```bash
+# Run PHPStan analysis
+composer run phpstan
+
+# Generate baseline for existing issues
+composer run phpstan:baseline
+
+# Clear PHPStan cache
+composer run phpstan:clear
+
+# Run type checking and tests together
+composer run test:all
+```
+
+### Configuration Files
+
+- `phpstan.neon` - Main PHPStan configuration with strict type checking
+- `phpstan-baseline.neon` - Baseline file for managing existing issues
+
+The configuration includes:
+- **Level 9 strictness** with all strict rules enabled
+- **Laravel-specific ignores** for dynamic methods and facades
+- **Type coverage requirements** for all methods and properties
+- **Dead code detection** for unused private methods and properties
+- **Strict comparison rules** to prevent type coercion issues
+- **Missing type hints detection** for all parameters and return types
+
 ## Basic Usage
 
 Query your monitoring data using the provided models:
